@@ -1,0 +1,143 @@
+{
+  "name": "carbon-components-angular",
+  "version": "0.0.0",
+  "description": "Next generation components",
+  "main": "index.js",
+  "scripts": {
+    "build": "bash scripts/build.sh",
+    "storybook": "start-storybook -s .storybook/public -p 6006",
+    "docs:build": "typedoc",
+    "lint": "tslint 'src/**/*.ts'",
+    "lint:fix": "tslint --fix 'src/**/*.ts'",
+    "test": "ng test --no-watch",
+    "test:watch": "ng test --watch",
+    "build-storybook": "build-storybook -c .storybook -s .storybook/public -o dist/docs/storybook",
+    "semantic-release": "semantic-release",
+    "commit": "git-cz -s",
+    "ng": "ng",
+    "ng:build": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng build"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "bash scripts/prepush.sh",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "release": {
+    "pkgRoot": "dist",
+    "branches": [
+      {
+        "name": "master",
+        "channel": "latest"
+      },
+      {
+        "name": "next",
+        "channel": "next"
+      },
+      {
+        "name": "v3",
+        "channel": "carbon-v3",
+        "range": "3.x"
+      },
+      {
+        "name": "v9",
+        "channel": "carbon-v9",
+        "range": "2.X"
+      }
+    ],
+    "tagFormat": "v${version}"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog-components"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:IBM/carbon-components-angular.git"
+  },
+  "license": "Apache-2.0",
+  "author": "IBM",
+  "peerDependencies": {
+    "@angular/common": "^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0 || ^14.0.0",
+    "@angular/core": "^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0 || ^14.0.0",
+    "@angular/forms": "^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0 || ^14.0.0",
+    "rxjs": "^6.0.0",
+    "zone.js": "^0.8.26 || ^0.9.0 || ^0.10.0 || ^0.11.0",
+    "carbon-components": "^10.0.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "0.13.9",
+    "@angular-devkit/build-ng-packagr": "0.13.9",
+    "@angular-devkit/core": "7.3.9",
+    "@angular/cli": "7.3.9",
+    "@angular/common": "7.2.16",
+    "@angular/compiler": "7.2.16",
+    "@angular/compiler-cli": "7.2.16",
+    "@angular/core": "7.2.16",
+    "@angular/forms": "7.2.16",
+    "@angular/platform-browser": "7.2.16",
+    "@angular/platform-browser-dynamic": "7.2.16",
+    "@angular/router": "7.2.16",
+    "@babel/core": "7.4.3",
+    "@carbon/themes": "10.15.0",
+    "@commitlint/cli": "8.3.5",
+    "@commitlint/config-conventional": "8.3.4",
+    "@storybook/addon-actions": "5.3.19",
+    "@storybook/addon-knobs": "5.3.19",
+    "@storybook/addon-links": "5.3.19",
+    "@storybook/addon-notes": "5.3.19",
+    "@storybook/addon-options": "5.3.19",
+    "@storybook/addon-storysource": "5.3.19",
+    "@storybook/addons": "5.3.19",
+    "@storybook/angular": "5.3.19",
+    "@storybook/theming": "5.3.19",
+    "@types/jasmine": "2.8.2",
+    "@types/node": "11.13.0",
+    "babel-loader": "8.0.5",
+    "carbon-components": "10.34.0",
+    "chai": "4.2.0",
+    "codelyzer": "5.0.0",
+    "commitizen": "4.2.4",
+    "core-js": "2.6.11",
+    "cz-conventional-changelog-components": "1.0.0",
+    "element-closest-polyfill": "1.0.0",
+    "exported-tests": "1.0.1",
+    "file-type": "12.4.0",
+    "gulp": "4.0.0",
+    "gulp-concat": "2.6.1",
+    "gulp-tap": "1.0.1",
+    "husky": "1.3.1",
+    "jasmine-core": "3.4.0",
+    "jasmine-spec-reporter": "4.2.1",
+    "karma": "6.3.16",
+    "karma-chrome-launcher": "2.2.0",
+    "karma-cli": "2.0.0",
+    "karma-coverage-istanbul-reporter": "2.0.5",
+    "karma-jasmine": "2.0.1",
+    "karma-jasmine-html-reporter": "1.4.2",
+    "lodash-es": "4.17.21",
+    "ng-packagr": "4.7.1",
+    "node-sass": "7.0.0",
+    "rxjs": "6.4.0",
+    "sass": "1.26.10",
+    "sass-loader": "10.1.1",
+    "semantic-release": "17.2.3",
+    "ts-helpers": "1.1.2",
+    "tsickle": "0.35.0",
+    "tslib": "1.9.3",
+    "tslint": "5.15.0",
+    "typedoc": "0.14.2",
+    "typedoc-plugin-external-module-name": "4.0.6",
+    "typescript": "3.2.4",
+    "whatwg-fetch": "3.0.0",
+    "zone.js": "0.8.26"
+  },
+  "dependencies": {
+    "@carbon/icon-helpers": "10.9.0",
+    "@carbon/icons": "10.27.0",
+    "@carbon/telemetry": "0.1.0",
+    "@carbon/utils-position": "1.1.4",
+    "flatpickr": "4.6.1"
+  }
+}
